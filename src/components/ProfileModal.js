@@ -12,7 +12,7 @@ const ProfileModal = ({ user, onClose }) => {
 
   const fetchUserDetails = async () => {
     try {
-      const response = await axios.get(`https://snipurl.vercel.app/api/user/${user.id}`);
+      const response = await axios.get(`https://shorturl-seu8.onrender.com/api/user/${user.id}`);
       const data = response.data;
     } catch (error) {
       console.error('Error fetching user details:', error.message);

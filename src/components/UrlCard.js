@@ -12,7 +12,7 @@ const UrlCard = ({ url, onDelete }) => {
   const hostname = new URL(long_url).hostname;
   const [iconUrl, setIconUrl] = useState(`https://logo.clearbit.com/${hostname}`);
 
-  const shortenedUrl = `https://snipurl.vercel.app/${short_code}`;
+  const shortenedUrl = `https://shorturl-seu8.onrender.com/${short_code}`;
 
   useEffect(() => {
     const img = new Image();
@@ -32,7 +32,7 @@ const UrlCard = ({ url, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://snipurl.vercel.app/api/urls/${short_code}`);
+      await axios.delete(`https://shorturl-seu8.onrender.com/api/urls/${short_code}`);
       onDelete(short_code);
     } catch (error) {
       console.error('Error deleting URL', error);
