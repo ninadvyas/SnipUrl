@@ -12,7 +12,7 @@ const UrlCard = ({ url, onDelete }) => {
   const hostname = new URL(long_url).hostname;
   const [iconUrl, setIconUrl] = useState(`https://logo.clearbit.com/${hostname}`);
 
-  const shortenedUrl = `https://shorturl-seu8.onrender.com/${short_code}`;
+  const shortenedUrl = `snipp.one/${short_code}`;
 
   useEffect(() => {
     const img = new Image();
@@ -25,14 +25,14 @@ const UrlCard = ({ url, onDelete }) => {
   }, [iconUrl]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(shortenedUrl);
+    navigator.clipboard.writeText(`https://snipp.one/${short_code}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 5000);
   };
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://shorturl-seu8.onrender.com/api/urls/${short_code}`);
+      await axios.delete(`https://snipp.one/api/urls/${short_code}`);
       onDelete(short_code);
     } catch (error) {
       console.error('Error deleting URL', error);

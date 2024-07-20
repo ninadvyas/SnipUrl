@@ -36,7 +36,7 @@ function Dashboard({ user, onLogout }) {
 
   const handleSubmit = async (longUrl) => {
     try {
-      const response = await axios.post('https://shorturl-seu8.onrender.com/api/shorten', { longUrl, userId: user?.id });
+      const response = await axios.post('https://snipp.one/api/shorten', { longUrl, userId: user?.id });
       setShortUrl(response.data.shortUrl);
       fetchUrls();
       toast.success('URL created successfully');

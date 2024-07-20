@@ -39,7 +39,7 @@ function Home() {
     }
 
     try {
-      const response = await axios.post('https://shorturl-seu8.onrender.com/api/shorten', { longUrl, userId: null });
+      const response = await axios.post('https://snipp.one/api/shorten', { longUrl, userId: null });
       const newShortUrl = response.data.shortUrl;
       const updatedUrls = [...shortUrls, newShortUrl];
       setShortUrls(updatedUrls);
