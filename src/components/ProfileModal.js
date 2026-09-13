@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Cross1Icon } from '@radix-ui/react-icons';
-import axios from 'axios';
 
 const ProfileModal = ({ user, onClose }) => {
   const [username] = useState(user.user_metadata.full_name || '');
   const [avatarUrl] = useState(user.user_metadata.avatar_url || '');
-
-  useEffect(() => {
-    fetchUserDetails();
-  }, []);
-
-  const fetchUserDetails = async () => {
-    try {
-      const response = await axios.get(`https://snipp.one/api/user/${user.id}`);
-      const data = response.data;
-    } catch (error) {
-      console.error('Error fetching user details:', error.message);
-    }
-  };
-
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75 z-50">

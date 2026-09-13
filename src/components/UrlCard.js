@@ -39,7 +39,6 @@ const UrlCard = ({ url, onDelete }) => {
     }
   };
 
-  const timeAgo = moment(created_at).fromNow();
   const exactTime = moment(created_at).format('MMMM Do YYYY, h:mm a');
 
   return (
